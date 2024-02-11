@@ -1,5 +1,7 @@
+import React from 'react';
 import "./App.css";
 import Tweet from "./components/Tweet";
+
 
 const tweetsArray = [
   {
@@ -37,10 +39,21 @@ const tweetsArray = [
   },
 ];
 
+// function App() {
+//   return (
+//     <div className="App">
+//       <Tweet />
+//     </div>
+//   );
+// }
+
 function App() {
   return (
     <div className="App">
-      <Tweet />
+      {/* Map through the tweetsArray and render a Tweet component for each tweet object */}
+      {tweetsArray.map((tweet, index) => (
+        <Tweet key={index} tweet={tweet} />
+      ))}
     </div>
   );
 }
